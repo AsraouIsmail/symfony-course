@@ -1,0 +1,43 @@
+{% extends "@Blog/layout.html.twig" %}
+
+ {% block content %}
+
+    {# {{ form(formulaire) }} #}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-offset-2">
+                <h1 class="page-header">Nouveau Post</h1>
+                {{form_start(formulaire)}}
+                <div class="form-group">
+                    {{ form_row(formulaire.title, {'attr': {'class': 'form-control', 'placeholder': 'title of the post'}})}}
+                </div>
+                <div class="form-group">
+                    {{ form_row(formulaire.description, {'attr': {'class': 'form-control', 'placeholder': 'description of post'}})}}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(formulaire.slug, {'attr': {'class': 'form-control', 'placeholder': 'Slug of the post'}})}}
+                </div>
+                <hr>
+                <div class="form-group">
+                    {{ form_row(formulaire.image.url, {'attr': {'class': 'form-control', 'placeholder': 'url image of the post'}})}}
+                </div>
+                <div class="form-group">
+                    {{ form_row(formulaire.image.alt, {'attr': {'class': 'form-control', 'placeholder': 'alt image of the post'}})}}
+                </div>
+                <hr>
+                <div class="checkbox">
+                    <label>
+                    {{ form_widget(formulaire.active) }}
+                        active
+                    </label>
+                </div>
+                {{ form_widget(formulaire.enregistrer, {'attr': {'class': 'btn btn-block btn-primary'}})}}
+                
+                {{form_end(formulaire)}}
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

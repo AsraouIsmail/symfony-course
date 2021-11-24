@@ -1,0 +1,49 @@
+
+    {% extends "@Blog/layout.html.twig" %}
+
+    {% block content %}
+
+    {{ parent() }}
+    
+    <h1>Welcome to the Post:index page</h1>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {% for message in app.session.flashbag.get('success')%}
+                    {{ message }}
+                {%endfor%}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+            <a href="{{ path('create_post')}}" class="btn btn-warning">Nouveau post</a>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                {% for index, post in posts%}
+                    <li class="list-group-item {% if loop.first %} active {% endif %}">
+                    
+                        <h1>{{post.title | upper}} Numero {{loop.index0}}</h1>
+                            <img style="width: 300px;" src="{{asset('uploads/posts/' ~ post.image.url )}}" alt="{{post.image.alt}}">
+                        <p>{{post.description}} <span class="badge">{{ post.author.firstname}} {{ post.author.lastname}}</span></p>
+
+                        <a href="{{ path('index_post', {'id': post.id})}}" class="btn btn-succes">Show details</a>
+                        <hr>
+
+                        
+                        
+                    </li>
+                    {% endfor %} 
+            </ul>
+                
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

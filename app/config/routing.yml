@@ -1,0 +1,26 @@
+stock:
+    resource: "@StockBundle/Resources/config/routing.yml"
+    prefix:   /
+
+blog:
+    resource: "@BlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+site:
+    resource: "@SiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+file:
+    resource: "@FileBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

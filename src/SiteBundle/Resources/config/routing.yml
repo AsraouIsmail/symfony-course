@@ -1,0 +1,7 @@
+site_homepage:
+    path:     /mouhja
+    defaults: { _controller: SiteBundle:Default:index }
+
+site_home:
+    path:     /ismail
+    defaults: { _controller: SiteBundle:Public:index }
