@@ -16,6 +16,8 @@ use BlogBundle\Form\PostType;
 // use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 
+
+
 class PostController extends Controller
 {
     /**

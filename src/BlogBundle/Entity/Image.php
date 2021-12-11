@@ -2,7 +2,10 @@
 
 namespace BlogBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
+
+
 
 /**
  * Image
@@ -23,7 +26,7 @@ class Image
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
     private $url;

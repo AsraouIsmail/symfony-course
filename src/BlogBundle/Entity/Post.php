@@ -6,7 +6,7 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\Date;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Post
@@ -28,8 +28,6 @@ class Post
 
     /**
      * @var string
-     * @Assert\NotBlank(message="merci d'ajouter un titre!")
-     * @Assert\Length(min=5, max=100)
      * @ORM\Column(name="title", type="string", length=170)
      */
     private $title;
@@ -48,6 +46,7 @@ class Post
     /**
      * 
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Author", cascade={"persist"})
+     * 
     */
 
     private $author;
